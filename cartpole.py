@@ -25,7 +25,7 @@ class NeuralNetwork:
 
     # Get decision from NN
     # TODO: Better understanding of how/why bias and weights interact
-    def getOutput(self, input):
+    def makeAction(self, input):
         output = np.reshape(np.matmul(input, self.weights[0]) + self.biases[0], (self.space[1]))
         return np.argmax(self.sigmoid(output))
 
@@ -85,7 +85,7 @@ def main():
     # Variables for algorithm tweaking
     GENERATIONS = 10
     STEPS = 500
-    POPULATION = 200
+    POPULATION = 20
     MUTATION_RATE = 0.01
     # Initialize OpenAI gym environment
     env = gym.make('CartPole-v1')
@@ -104,7 +104,7 @@ def main():
             for _ in range(STEPS):
                 # Render CartPole
                 env.render()
-                action = node.getOutput(cur_env)
+                action = node.makeAction(cur_env)
                 # Perform action
                 cur_env, reward, done, _ = env.step(action)
                 # Increment reward for child
