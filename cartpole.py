@@ -103,7 +103,7 @@ def main():
             # Make child's moves until environment ends
             for _ in range(STEPS):
                 # Render CartPole
-                # env.render()
+                env.render()
                 action = node.getOutput(cur_env)
                 # Perform action
                 cur_env, reward, done, _ = env.step(action)
