@@ -5,5 +5,6 @@ CartPole v1 solved via Genetic Algorithm / Neural Network
 * Built using python 3.6.5
 * To install dependencies:
 
-sudo apt install python3.6-tk python3-setuptools python3-distutils python3-pip
-pip3 install gym matplotlib numpy 
+`sudo apt install python3.6-tk python3-setuptools python3-distutils python3-pip`
+
+`pip3 install gym matplotlib numpy`
